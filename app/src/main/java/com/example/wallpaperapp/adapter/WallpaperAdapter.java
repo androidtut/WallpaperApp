@@ -23,6 +23,11 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.View
         this.context = context;
     }
 
+    public void filteradapter(ArrayList<WallpaperModels>filterlist){
+        this.wlist = filterlist;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
