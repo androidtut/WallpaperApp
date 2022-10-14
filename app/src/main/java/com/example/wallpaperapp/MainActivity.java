@@ -46,9 +46,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //create method
+        binding.nature.setOnClickListener(v->{
+            filtermethod("nature");
+            });
+
+        binding.car.setOnClickListener(v->{
+            filtermethod("car");
+        });
+
+        binding.train.setOnClickListener(v->{
+            filtermethod("train");
+        });
+
+        binding.trending.setOnClickListener(v->{
+            filtermethod("trending");
+        });
+
     }
 
-  //alt + enter to create method
+    private void filtermethod(String category) {
+        Toast.makeText(this, category.toString() , Toast.LENGTH_SHORT).show();
+        searchfilterlist(category.toString());
+    }
+
+    //alt + enter to create method
     private void searchfilterlist(String text) {
      //code to search data from recyclerview
         //create arraylist
@@ -58,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 filterlist.add(item);
             }
             if(filterlist.isEmpty()){
-                Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
             }else{
                 adapter.filteradapter(filterlist);
             }
