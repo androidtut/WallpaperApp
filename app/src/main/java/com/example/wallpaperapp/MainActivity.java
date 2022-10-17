@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         //create method
         binding.nature.setOnClickListener(v->{
             filtermethod("nature");
-            });
+        });
 
         binding.car.setOnClickListener(v->{
             filtermethod("car");
@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         binding.trending.setOnClickListener(v->{
             filtermethod("trending");
         });
-
     }
 
     private void filtermethod(String category) {
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     //alt + enter to create method
     private void searchfilterlist(String text) {
-     //code to search data from recyclerview
+     //code to search and filter data from recyclerview
         //create arraylist
         ArrayList<WallpaperModels> filterlist = new ArrayList<>();
         for(WallpaperModels item:wlist){

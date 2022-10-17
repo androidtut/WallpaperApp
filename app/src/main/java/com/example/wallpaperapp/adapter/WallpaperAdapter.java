@@ -1,6 +1,7 @@
 package com.example.wallpaperapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wallpaperapp.R;
 import com.example.wallpaperapp.models.WallpaperModels;
+import com.example.wallpaperapp.setwallpaperActivity;
 
 import java.util.ArrayList;
 
@@ -39,6 +41,12 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
      final WallpaperModels models = wlist.get(position);
      holder.imageView.setImageResource(models.getImage());
+     holder.imageView.setOnClickListener(v->{
+         Intent intent = new Intent(context, setwallpaperActivity.class);
+         //now passing image from one screen to another screen
+         intent.putExtra("image",models.getImage());
+         context.startActivity(intent);
+     });
     }
 
     @Override
